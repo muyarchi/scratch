@@ -19,8 +19,11 @@ class FileReader:
             self.parse_row(row)
 
     def parse_row(self, row):
+        elements = list()
         columns = row.split('|')
-        self.table[columns[0].strip()] = columns
+        for element in columns:
+            elements.append(element.strip())
+        self.table[columns[0].strip()] = elements
 
     def get_row(self, key):
         if key in self.table:

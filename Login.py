@@ -8,8 +8,10 @@ password = input("Password:")
 
 user = fileReader.get_row(username)
 if user is not None:
-    print(user[0])
-    print(user[1])
-    print(user[2])
-else:
-    print("Wrong username")
+    if username == user[0] and password == user[1]:
+        print("Logged in successfully")
+        print("Full name: %s" %user[2])
+        print("Phone number: %s" % user[3])
+        exit(0)
+
+print("Wrong username or password!!!")
