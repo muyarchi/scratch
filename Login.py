@@ -1,11 +1,14 @@
 from FileReader import FileReader
 
+# Parse the user database from file
 fileReader = FileReader()
 fileReader.parse("C:\\Users\\esriyag\\PycharmProjects\\scratch\\db\\users")
 
+# Fetch username and password from user
 username = input("Username:")
 password = input("Password:")
 
+# Check if user exists and print data
 user = fileReader.get_row(username)
 if user is not None:
     if username == user[0] and password == user[1]:
